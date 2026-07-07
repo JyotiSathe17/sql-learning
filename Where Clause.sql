@@ -24,4 +24,3 @@ select *
 from employee_demographics
 where (first_name Like 'les%' or gender like '_e%') and  birth_date like '%25'
 ;
-

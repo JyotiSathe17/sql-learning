@@ -9,10 +9,16 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 - **SELECT statements**: Learned the basics of retrieving data from tables using `SELECT_Query`.
 - **WHERE clause**: Practiced filtering records with conditions in `Where Clause`.
 
-  ### Day 2 — 6-7-2026
+### Day 2 — 6-7-2026
 - Learned about `GROUP BY` and `ORDER BY`
 - Practiced grouping records and aggregating data with `GROUP BY`
 - Practiced sorting results in ascending/descending order with `ORDER BY`
+
+### Day 3 — [date]
+- Learned about `HAVING`, `LIMIT`, and aliasing
+- Practiced filtering grouped results using HAVING
+- Practiced limiting the number of rows returned with LIMIT
+- Practiced renaming columns/tables using aliases (AS)
 
 ## 📁 Files
 
@@ -23,6 +29,11 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 | `Where Clause.sql` | Filtering data using the `WHERE` clause |
 | `GROUP_BY.sql` | Grouping records and using aggregate functions (COUNT, SUM, etc.) |
 | `ORDER_BY.sql` | Sorting query results using ORDER BY (ASC/DESC) |
+| `Having.sql` | Filtering grouped data using HAVING |
+| `Limit_Aliasing.sql` | Restricting result rows using LIMIT And Renaming columns/tables with aliases |
+
+
+
 
 ## 🎯 Goals
 - Build a solid foundation in SQL fundamentals
