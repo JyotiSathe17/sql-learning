@@ -14,7 +14,7 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 - Practiced grouping records and aggregating data with `GROUP BY`
 - Practiced sorting results in ascending/descending order with `ORDER BY`
 
-### Day 3 — [date]
+### Day 3 — 7-7-2026
 - Learned about `HAVING`, `LIMIT`, and aliasing
 - Practiced filtering grouped results using HAVING
 - Practiced limiting the number of rows returned with LIMIT
