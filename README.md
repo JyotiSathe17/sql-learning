@@ -20,6 +20,13 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 - Practiced limiting the number of rows returned with LIMIT
 - Practiced renaming columns/tables using aliases (AS)
 
+### Day 4 — 9-7-26
+- Learned about JOINs in depth
+- Practiced INNER JOIN
+- Practiced OUTER JOIN — LEFT JOIN and RIGHT JOIN
+- Practiced SELF JOIN
+
+
 ## 📁 Files
 
 | File | Description |
@@ -31,6 +38,11 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 | `ORDER_BY.sql` | Sorting query results using ORDER BY (ASC/DESC) |
 | `Having.sql` | Filtering grouped data using HAVING |
 | `Limit_Aliasing.sql` | Restricting result rows using LIMIT And Renaming columns/tables with aliases |
+| `Inner_Join_Query.sql` | Combining rows from multiple tables using INNER JOIN |
+| `Left_Join_Query.sql` | Returning all rows from the left table with LEFT JOIN |
+| `Right_Join_Query.sql` | Returning all rows from the right table with RIGHT JOIN |
+| `Self_Join_Query.sql` | Joining a table to itself using SELF JOIN |
+
 
 
 
