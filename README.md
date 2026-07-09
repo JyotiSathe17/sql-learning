@@ -38,10 +38,7 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 | `ORDER_BY.sql` | Sorting query results using ORDER BY (ASC/DESC) |
 | `Having.sql` | Filtering grouped data using HAVING |
 | `Limit_Aliasing.sql` | Restricting result rows using LIMIT And Renaming columns/tables with aliases |
-| `Inner_Join_Query.sql` | Combining rows from multiple tables using INNER JOIN |
-| `Left_Join_Query.sql` | Returning all rows from the left table with LEFT JOIN |
-| `Right_Join_Query.sql` | Returning all rows from the right table with RIGHT JOIN |
-| `Self_Join_Query.sql` | Joining a table to itself using SELF JOIN |
+| `Join.sql` | Combining rows from multiple tables using INNER JOIN, Returning all rows from the left table with LEFT JOIN, Returning all rows from the right table with RIGHT JOIN, Joining a table to itself using SELF JOIN|
 
 
 
