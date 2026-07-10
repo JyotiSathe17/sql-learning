@@ -26,6 +26,12 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 - Practiced OUTER JOIN — LEFT JOIN and RIGHT JOIN
 - Practiced SELF JOIN
 
+### Day 5 — 10-7-26
+- Learned about `UNION`
+- Practiced combining results from multiple queries using UNION
+- Learned string functions: `LENGTH`, `UPPER`, `LOWER`, `TRIM`, `LTRIM`, `RTRIM`, `LEFT`, `RIGHT`, `SUBSTRING`
+- Practiced manipulating and formatting text data using these functions
+
 
 ## 📁 Files
 
@@ -39,6 +45,9 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 | `Having.sql` | Filtering grouped data using HAVING |
 | `Limit_Aliasing.sql` | Restricting result rows using LIMIT And Renaming columns/tables with aliases |
 | `Join.sql` | Combining rows from multiple tables using INNER JOIN, Returning all rows from the left table with LEFT JOIN, Returning all rows from the right table with RIGHT JOIN, Joining a table to itself using SELF JOIN|
+| `UNION.sql` | Combining results of multiple SELECT queries using UNION |
+| `string_functions.sql` | Practicing LENGTH, UPPER, LOWER, TRIM, LTRIM, RTRIM, LEFT, RIGHT, SUBSTRING |
+
 
 
 
