@@ -32,6 +32,12 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 - Learned string functions: `LENGTH`, `UPPER`, `LOWER`, `TRIM`, `LTRIM`, `RTRIM`, `LEFT`, `RIGHT`, `SUBSTRING`
 - Practiced manipulating and formatting text data using these functions
 
+### Day 6 — 11-7-26
+- Learned more string functions: `REPLACE`, `LOCATE`, `CONCAT`
+- Practiced replacing substrings, finding position of a substring, and joining strings together
+- Learned the `CASE` statement
+- Practiced writing conditional logic within queries using CASE
+
 
 ## 📁 Files
 
@@ -47,6 +53,9 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 | `Join.sql` | Combining rows from multiple tables using INNER JOIN, Returning all rows from the left table with LEFT JOIN, Returning all rows from the right table with RIGHT JOIN, Joining a table to itself using SELF JOIN|
 | `UNION.sql` | Combining results of multiple SELECT queries using UNION |
 | `string_functions.sql` | Practicing LENGTH, UPPER, LOWER, TRIM, LTRIM, RTRIM, LEFT, RIGHT, SUBSTRING |
+| `string_functions.sql` | Practicing REPLACE, LOCATE, and CONCAT |
+| `Case_Statement.sql` | Writing conditional logic using CASE |
+
 
 
 
