@@ -38,6 +38,11 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 - Learned the `CASE` statement
 - Practiced writing conditional logic within queries using CASE
 
+### Day 7 — 12-7-26
+- Learned about subqueries
+- Practiced writing subqueries in `WHERE`, `SELECT`, and `FROM` clauses
+- Practiced using subqueries to filter results based on another query's output
+
 
 ## 📁 Files
 
@@ -55,6 +60,8 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 | `string_functions.sql` | Practicing LENGTH, UPPER, LOWER, TRIM, LTRIM, RTRIM, LEFT, RIGHT, SUBSTRING |
 | `string_functions.sql` | Practicing REPLACE, LOCATE, and CONCAT |
 | `Case_Statement.sql` | Writing conditional logic using CASE |
+| `subquery.sql` | Practicing subqueries in WHERE, SELECT, and FROM clauses |
+
 
 
 
