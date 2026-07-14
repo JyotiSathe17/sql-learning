@@ -43,6 +43,36 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 - Practiced writing subqueries in `WHERE`, `SELECT`, and `FROM` clauses
 - Practiced using subqueries to filter results based on another query's output
 
+### Day 8 — 14-7-26
+- Learned Window Functions: `OVER`, `PARTITION BY`, ROW_NUMBER, RANK, DENSE_RANK, and running totals
+
+**Key points to remember:**
+
+**OVER() and PARTITION BY**
+- A window function performs a calculation across a set of rows *related to the current row*, without collapsing them into a single output row (unlike GROUP BY).
+- `PARTITION BY` divides the result set into groups (windows) — the function is applied separately within each group.
+
+**GROUP BY vs OVER() — the core difference**
+- `GROUP BY` collapses multiple rows into one row per group — you lose access to individual row details.
+- `OVER()` keeps every row visible while still letting you calculate aggregates (SUM, AVG, COUNT, etc.) per group.
+- This makes `OVER()` ideal when you want to show detail-level data **alongside** an aggregate value (e.g. each employee's salary next to their department's average salary) — something GROUP BY alone cannot do.
+
+**Running Total (Rolling Sum)**
+- Achieved using `SUM() OVER (ORDER BY column)`.
+- Instead of a single total, it accumulates the sum row by row, in the order specified.
+- Useful for tracking cumulative values over time (e.g. running revenue, running count).
+
+**ROW_NUMBER()**
+- Assigns a unique, sequential number to each row within a partition, starting at 1.
+- No ties — every row gets a different number, even if values are equal.
+
+**RANK()**
+- Assigns a rank to each row within a partition, based on `ORDER BY`.
+- If there's a tie, rows share the same rank — but the next rank **skips** numbers (e.g. 1, 2, 2, 4).
+
+**DENSE_RANK()**
+- Same as RANK(), but does **not** skip numbers after a tie (e.g. 1, 2, 2, 3).
+
 
 ## 📁 Files
 
@@ -61,6 +91,8 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 | `string_functions.sql` | Practicing REPLACE, LOCATE, and CONCAT |
 | `Case_Statement.sql` | Writing conditional logic using CASE |
 | `subquery.sql` | Practicing subqueries in WHERE, SELECT, and FROM clauses |
+| `Window_Functions.sql` | Practicing OVER, PARTITION BY, running totals, ROW_NUMBER, RANK, DENSE_RANK |
+
 
 
 
