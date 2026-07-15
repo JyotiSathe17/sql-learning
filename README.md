@@ -73,6 +73,55 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 **DENSE_RANK()**
 - Same as RANK(), but does **not** skip numbers after a tie (e.g. 1, 2, 2, 3).
 
+### Day 9 — 15-07-26
+- Learned Common Table Expressions (CTEs): aliasing, default naming, combining multiple CTEs, and two ways to write them
+
+**Key points to remember:**
+
+**What is a CTE?**
+- A CTE (Common Table Expression) is a temporary, named result set defined using `WITH`, which you can reference like a table within a single query.
+- It exists only for the duration of that query — it's not stored permanently like a view or table.
+
+**Basic Syntax**
+```sql
+WITH cte_name AS (
+    SELECT ...
+    FROM ...
+)
+SELECT * FROM cte_name;
+```
+
+**Why use CTEs**
+- Makes complex queries more readable by breaking them into logical, named steps.
+- Avoids repeating the same subquery multiple times in one query.
+- Easier to debug than deeply nested subqueries — each CTE can be tested on its own.
+
+**Aliasing in CTEs**
+- You can rename columns inside the CTE definition to make the final query cleaner and more readable.
+- Default naming: if you don't alias a column, CTE uses the column name from the original SELECT.
+
+**Combining Multiple CTEs**
+- You can define more than one CTE in a single `WITH` clause, separated by commas:
+```sql
+WITH cte1 AS (
+    SELECT ...
+),
+cte2 AS (
+    SELECT ...
+)
+SELECT * FROM cte1
+JOIN cte2 ON ...;
+```
+- Later CTEs in the chain can reference earlier ones — this is useful for multi-step transformations.
+
+**Two Ways to Write CTEs**
+1. **Single CTE** — one `WITH` block feeding directly into the main query.
+2. **Chained/Multiple CTEs** — several `WITH` blocks stacked together (comma-separated), where each can build on the previous one, useful for breaking a big problem into smaller logical pieces.
+
+**CTE vs Subquery**
+- A CTE is essentially a more readable, named alternative to a subquery — functionally similar, but easier to reuse and maintain within the same query.
+
+
 
 ## 📁 Files
 
@@ -92,6 +141,8 @@ Documenting my journey learning MySQL from scratch. This repo contains the queri
 | `Case_Statement.sql` | Writing conditional logic using CASE |
 | `subquery.sql` | Practicing subqueries in WHERE, SELECT, and FROM clauses |
 | `Window_Functions.sql` | Practicing OVER, PARTITION BY, running totals, ROW_NUMBER, RANK, DENSE_RANK |
+| `CTE_Query.sql` | Practicing CTEs — aliasing, default naming, combining multiple CTEs |
+
 
 
 
