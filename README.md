@@ -121,6 +121,32 @@ JOIN cte2 ON ...;
 **CTE vs Subquery**
 - A CTE is essentially a more readable, named alternative to a subquery — functionally similar, but easier to reuse and maintain within the same query.
 
+### Day 10 — 16-7-26
+- Learned about Temporary Tables
+
+**Key points to remember:**
+
+**What is a Temporary Table?**
+- A temporary table is a table that exists only for the duration of a session (or connection) — it's automatically dropped once the session ends or the connection closes.
+- Useful for storing intermediate results when a query is too complex to handle in one step.
+
+**Why use Temporary Tables**
+- Helpful for breaking down complex, multi-step logic into manageable pieces.
+- Useful when the same intermediate result is needed multiple times within a session — avoids recalculating it each time.
+- Good for testing/prototyping without affecting permanent tables.
+
+**Temporary Table vs CTE**
+- A CTE only exists for the single query it's defined in; a temporary table persists for the whole session and can be reused across multiple queries.
+- Temporary tables can be indexed, updated, and queried repeatedly — CTEs cannot.
+- Temporary tables use actual storage (in tempdb or similar), so they have a bit more overhead than a CTE.
+
+**Things to remember**
+- Temporary tables are session-specific — other users/connections can't see them, even if named the same.
+- They're automatically dropped when the session ends, but can also be manually dropped using:
+```sql
+DROP TEMPORARY TABLE temp_table_name;
+```
+
 
 
 ## 📁 Files
@@ -142,6 +168,8 @@ JOIN cte2 ON ...;
 | `subquery.sql` | Practicing subqueries in WHERE, SELECT, and FROM clauses |
 | `Window_Functions.sql` | Practicing OVER, PARTITION BY, running totals, ROW_NUMBER, RANK, DENSE_RANK |
 | `CTE_Query.sql` | Practicing CTEs — aliasing, default naming, combining multiple CTEs |
+| `Temporary_Table.sql` | Practicing creation and use of temporary tables |
+
 
 
 
