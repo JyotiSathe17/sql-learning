@@ -147,6 +147,64 @@ JOIN cte2 ON ...;
 DROP TEMPORARY TABLE temp_table_name;
 ```
 
+### Day 11 — 18-7-26
+- Learned about Stored Procedures
+
+**Key points to remember:**
+
+**What is a Stored Procedure?**
+- A stored procedure is a saved, precompiled set of SQL statements that you can run whenever needed by calling its name — instead of rewriting the same query every time.
+- Stored permanently in the database (unlike temporary tables or CTEs).
+
+**Basic Syntax**
+```sql
+DELIMITER //
+
+CREATE PROCEDURE procedure_name()
+BEGIN
+    SELECT ...
+    FROM ...;
+END //
+
+DELIMITER ;
+```
+
+**Calling a Stored Procedure**
+```sql
+CALL procedure_name();
+```
+
+**Parameters in Stored Procedures**
+- Procedures can accept input parameters, making them reusable with different values:
+```sql
+CREATE PROCEDURE procedure_name(IN param1 datatype)
+BEGIN
+    SELECT ...
+    FROM ...
+    WHERE column = param1;
+END //
+```
+- `IN` — passes a value into the procedure (most common)
+- `OUT` — returns a value from the procedure
+- `INOUT` — used for both passing in and returning a value
+
+**Why use Stored Procedures**
+- Reusability — write the logic once, call it anytime.
+- Performance — precompiled, so it can run faster than sending the same raw query repeatedly.
+- Security — users can be given permission to run a procedure without direct access to underlying tables.
+- Maintainability — logic changes happen in one place (the procedure), not scattered across the app.
+
+**Stored Procedure vs Function**
+- A stored procedure can perform actions (INSERT, UPDATE, DELETE) and doesn't have to return a value.
+- A function must return a single value and is typically used within a SELECT statement.
+
+**Things to remember**
+- Use `DELIMITER //` before defining a procedure so MySQL doesn't treat the semicolons inside the procedure body as the end of the statement.
+- To remove a procedure:
+```sql
+DROP PROCEDURE procedure_name;
+```
+
 
 
 ## 📁 Files
@@ -169,6 +227,9 @@ DROP TEMPORARY TABLE temp_table_name;
 | `Window_Functions.sql` | Practicing OVER, PARTITION BY, running totals, ROW_NUMBER, RANK, DENSE_RANK |
 | `CTE_Query.sql` | Practicing CTEs — aliasing, default naming, combining multiple CTEs |
 | `Temporary_Table.sql` | Practicing creation and use of temporary tables |
+| `Stored_Procedures.sql` | Practicing creation and calling of stored procedures |
+
+
 
 
 
