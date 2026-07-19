@@ -205,6 +205,81 @@ END //
 DROP PROCEDURE procedure_name;
 ```
 
+### Day 12 — 19-7-26
+- Learned about Triggers and Events
+
+**Key points to remember:**
+
+**What is a Trigger?**
+- A trigger is a block of SQL code that automatically executes in response to a specific event on a table — `INSERT`, `UPDATE`, or `DELETE`.
+- Runs automatically; you don't call it manually like a stored procedure.
+
+**Basic Syntax**
+```sql
+DELIMITER //
+
+CREATE TRIGGER trigger_name
+BEFORE INSERT ON table_name
+FOR EACH ROW
+BEGIN
+    -- logic here
+END //
+
+DELIMITER ;
+```
+
+**Timing and Events**
+- Timing: `BEFORE` or `AFTER` — whether the trigger runs before or after the triggering action.
+- Event: `INSERT`, `UPDATE`, or `DELETE` — the action that fires the trigger.
+- Combinations: `BEFORE INSERT`, `AFTER INSERT`, `BEFORE UPDATE`, `AFTER UPDATE`, `BEFORE DELETE`, `AFTER DELETE`.
+
+**NEW and OLD keywords**
+- `NEW` — refers to the new row's values (used in INSERT and UPDATE triggers).
+- `OLD` — refers to the row's values before the change (used in UPDATE and DELETE triggers).
+
+**Why use Triggers**
+- Automatically enforce business rules (e.g. prevent negative stock values).
+- Keep audit logs — automatically record changes to a table.
+- Maintain data consistency across related tables without relying on the application layer.
+
+**Things to remember**
+- Triggers run automatically — no `CALL` needed.
+- Overusing triggers can make debugging harder since logic runs silently in the background.
+- To remove a trigger:
+```sql
+DROP TRIGGER trigger_name;
+```
+
+---
+
+**What is an Event?**
+- An event (Event Scheduler) is a task that runs automatically at a scheduled time or interval — like a cron job, but built into MySQL.
+
+**Basic Syntax**
+```sql
+CREATE EVENT event_name
+ON SCHEDULE EVERY 1 DAY
+DO
+    -- SQL statement(s) here
+```
+
+**Enabling the Event Scheduler**
+- MySQL's event scheduler must be turned on for events to run:
+```sql
+SET GLOBAL event_scheduler = ON;
+```
+
+**Trigger vs Event**
+- A trigger runs in response to a data change (INSERT/UPDATE/DELETE) on a specific table.
+- An event runs based on time/schedule, independent of any specific data change.
+
+**Things to remember**
+- Events are useful for recurring maintenance tasks — e.g. archiving old records, cleaning up logs, resetting counters.
+- To remove an event:
+```sql
+DROP EVENT event_name;
+```
+
 
 
 ## 📁 Files
@@ -228,6 +303,8 @@ DROP PROCEDURE procedure_name;
 | `CTE_Query.sql` | Practicing CTEs — aliasing, default naming, combining multiple CTEs |
 | `Temporary_Table.sql` | Practicing creation and use of temporary tables |
 | `Stored_Procedures.sql` | Practicing creation and calling of stored procedures |
+| `Triggers_and_Events.sql` | Practicing creation of triggers (BEFORE/AFTER INSERT, UPDATE, DELETE) & Practicing creation of scheduled events |
+
 
 
 
