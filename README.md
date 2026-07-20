@@ -310,9 +310,6 @@ USE schema_name;
 - Never clean data directly on the raw/original table — always work on a staging copy.
 - Identify duplicates based on the *combination* of relevant columns, not just one column, to avoid false positives.
 
-| `layoffs.csv` | Original dataset downloaded from GitHub |
-| `layoffs_data_cleaning.sql` | Importing dataset and removing duplicates (ongoing — more cleaning steps to be added) |
-
 
 
 ## 📁 Files
@@ -337,6 +334,10 @@ USE schema_name;
 | `Temporary_Table.sql` | Practicing creation and use of temporary tables |
 | `Stored_Procedures.sql` | Practicing creation and calling of stored procedures |
 | `Triggers_and_Events.sql` | Practicing creation of triggers (BEFORE/AFTER INSERT, UPDATE, DELETE) & Practicing creation of scheduled events |
+| `layoffs.csv` | Original dataset downloaded from GitHub |
+| `layoffs_data_cleaning.sql` | Importing dataset and removing duplicates (ongoing — more cleaning steps to be added) |
+
+
 
 
 
