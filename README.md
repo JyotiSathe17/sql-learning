@@ -280,6 +280,39 @@ SET GLOBAL event_scheduler = ON;
 DROP EVENT event_name;
 ```
 
+## 🚀 Project: Data Cleaning
+
+### Day 13 — 20-7-26
+- Started a hands-on data cleaning project
+- Downloaded a new dataset from GitHub
+- Created a new schema in MySQL and imported the dataset
+- Performed removal of duplicate records
+- *(This script will be built on further as more cleaning steps are added)*
+
+**Key points to remember:**
+
+**Importing a Dataset into MySQL**
+- Create a new schema first to keep the project isolated from other practice databases:
+```sql
+CREATE DATABASE schema_name;
+USE schema_name;
+```
+- Import CSV data using either MySQL Workbench's **Table Data Import Wizard**, 
+**Why Data Cleaning Matters**
+- Raw datasets often have duplicates, inconsistent formatting, missing values, or incorrect data types — cleaning ensures accurate analysis later.
+- It's usually the first and most important step before any real analysis or reporting.
+
+**Removing Duplicates**
+- One common approach: use `ROW_NUMBER()` with `PARTITION BY` to identify duplicate rows based on key columns, then delete rows where the row number is greater than 1.
+- Always duplicate the raw table first (e.g. `table_name_staging`) before cleaning, so the original data isn't lost if something goes wrong.
+
+**Things to remember**
+- Never clean data directly on the raw/original table — always work on a staging copy.
+- Identify duplicates based on the *combination* of relevant columns, not just one column, to avoid false positives.
+
+| `layoffs.csv` | Original dataset downloaded from GitHub |
+| `layoffs_data_cleaning.sql` | Importing dataset and removing duplicates (ongoing — more cleaning steps to be added) |
+
 
 
 ## 📁 Files
