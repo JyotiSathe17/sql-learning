@@ -311,6 +311,57 @@ USE schema_name;
 - Identify duplicates based on the *combination* of relevant columns, not just one column, to avoid false positives.
 
 
+### Day 14 — 21-7-26
+- Continued the data cleaning project
+- Standardized data formatting
+- Handled NULL and blank values
+- Dropped unnecessary columns/tables
+
+**Key points to remember:**
+
+**Standardizing Data**
+- Ensures consistency across a column — e.g. trimming extra spaces, fixing inconsistent casing, standardizing date formats.
+```sql
+UPDATE table_name
+SET column_name = TRIM(column_name);
+
+UPDATE table_name
+SET column_name = UPPER(column_name);
+```
+- Standardizing dates (converting text to a proper DATE type):
+```sql
+UPDATE table_name
+SET date_column = STR_TO_DATE(date_column, '%m/%d/%Y');
+```
+
+**Handling NULL and Blank Values**
+- NULL and blank (`''`) are not the same — NULL means "no value," while blank is an empty string. Both need to be checked separately.
+```sql
+SELECT * FROM table_name
+WHERE column_name IS NULL OR column_name = '';
+```
+- Depending on the case, blanks/NULLs can be:
+  - Replaced with a default value using `IFNULL()` or `COALESCE()`
+  - Filled in using logic from other related rows (e.g. matching by another column)
+  - Left as NULL if there's genuinely no available data — don't force a fake value
+
+**Dropping Columns or Tables**
+- Remove a column that's no longer needed (e.g. after extracting data from it, or if it's irrelevant):
+```sql
+ALTER TABLE table_name
+DROP COLUMN column_name;
+```
+- Remove an entire table:
+```sql
+DROP TABLE table_name;
+```
+
+**Things to remember**
+- Always double-check before dropping — this action can't be undone unless you have a backup or staging copy.
+- Standardize and handle NULLs *before* removing columns, so you don't accidentally lose data you might've needed for reference.
+- Keep working on the staging copy, not the original raw table.
+
+
 
 ## 📁 Files
 
@@ -336,6 +387,8 @@ USE schema_name;
 | `Triggers_and_Events.sql` | Practicing creation of triggers (BEFORE/AFTER INSERT, UPDATE, DELETE) & Practicing creation of scheduled events |
 | `layoffs.csv` | Original dataset downloaded from GitHub |
 | `layoffs_data_cleaning.sql` | Importing dataset and removing duplicates (ongoing — more cleaning steps to be added) |
+| `layoffs_data_cleaning.sql` | Updated with standardizing data, handling NULLs/blanks, and dropping unnecessary columns/rows |
+
 
 
 
